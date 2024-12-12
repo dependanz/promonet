@@ -12,8 +12,16 @@ import promonet
 
 
 @torchutil.notify('augment')
-def datasets(datasets):
+def datasets(
+    datasets, 
+    cache_dir  = promonet.CACHE_DIR, 
+    assets_dir = promonet.ASSETS_DIR
+):
     """Perform data augmentation on cached datasets"""
+    promonet.CACHE_DIR  = cache_dir
+    promonet.ASSETS_DIR = assets_dir
+    promonet.AUGMENT_DIR = promonet.ASSETS_DIR / 'augmentations'
+    breakpoint()
     for dataset in datasets:
 
         # Remove cached metadata that may become stale
