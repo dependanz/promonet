@@ -110,7 +110,7 @@ def from_file_to_file(
     if output_format == 'pt':
         torch.save(features, output_file)
     elif output_format == 'csv':
-        features = features.cpu().numpy()[0]
+        features = features.detach().cpu().numpy()[0]
         
         # Representation labels for header
         labels = [
