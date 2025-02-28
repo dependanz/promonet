@@ -121,7 +121,6 @@ def datasets(
         'partitions' /
         ('adaptation' if promonet.ADAPTATION else 'multispeaker')
     )
-    breakpoint()
     for name in datasets:
 
         # Remove cached training statistics that may become stale

@@ -26,7 +26,6 @@ def parse_args():
         default=promonet.ASSETS_DIR,
         type=Path,
         help='Assets directory')
-    breakpoint()
     return parser.parse_args()
 
 
